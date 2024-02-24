@@ -18,7 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from aboutMe import views
 
+handler404 = 'aboutMe.views.error_404'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.home)
+    path("", views.home),
+    path("projects/", views.all_projects),
+    path("projects/<int:project_id>/",views.project),
+    path("resume/", views.resume),
+    path("about/", views.about),
+    path("contacts/", views.contacts)
 ]
