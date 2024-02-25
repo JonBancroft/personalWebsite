@@ -148,3 +148,21 @@ footer img {
 	top: 23px;
 	right: 5px;
 }
+
+#contact-header-box {
+	border: solid;
+	margin-left:1rem;
+}
+
+#project-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+#project-list img {
+	width: 20rem;
+	height: 20rem;
+	padding: 1rem;
+}

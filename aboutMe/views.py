@@ -3,7 +3,9 @@ from . import models
 
 # Create your views here.
 def home(request):
-    return render(request, "index.html", {'title': 'Jon Bancroft'})
+    projects = models.Project.objects.all()[:3]
+    return render(request, "index.html", {'title': 'Jon Bancroft',
+                                          'projects': projects})
 
 
 def all_projects(request):
