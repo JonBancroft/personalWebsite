@@ -6,13 +6,25 @@
 	margin-bottom: 1rem;
 }
 
+body, html {
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
 main {
     margin:    0 auto;
-    max-width: 90%;
+    width: 90%;
+    min-height: 65vh;
 }
 
 #main-intro {
-	margin-top: 5rem;
+	margin-top: 3.5rem;
 	font-size: 3rem;
 	font-weight: 600;
 	font-style: bold;
@@ -27,13 +39,14 @@ h2 {
 header {
 	border-bottom: solid;
 	border-color: #829492;
+	margin-top: 1rem;
 }
 
 header a {
 	text-decoration: none;
 	padding: 5px 10px;
 	font-family: "Roboto", sans-serif;
-	font-weight: 600;
+	font-weight: 800;
 	font-style: bold;
 	margin-bottom: 0;
 }
@@ -54,7 +67,7 @@ a:hover {
 #logo {
 	display: flex;
 	justify-content: flex-start;
-	font-size: 1.35em;
+	font-size: 1rem;
 }
 
 #logo a:hover {
@@ -66,27 +79,39 @@ a:hover {
 	justify-content: space-between;
 }
 
-.content-box {
+.info-box {
 	border-left: solid;
 	border-color: #234340;
 	background-color: #E0E4E4;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 1rem 2rem 1rem;
+}
+
+#contacts {
+	display: flex;
+	flex-direction: column;
+}
+
+#contacts img {
+	position: relative;
+	top: 27px;
+	right: 5px;
+	Margin-left: 2rem;
 }
 
 footer {
-	max-height: 10rem;
+	width: 100%;
+	min-height: 3rem;
 	background-color: #042825;
-	margin-top: 3rem;
+	margin: 3rem 0 0 0;
 }
 
 #footer-content {
-	margin:    0 auto;
-    max-width: 90%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: flex-start;
 	padding: 1rem;
+	margin: 0;
 }
 
 #footer-content * {
@@ -94,7 +119,7 @@ footer {
 	font-weight: 600;
 	font-style: bold;
 	font-size: .75rem;
-	margin: 2px 0;
+	margin: 2px 0 1rem 0;
 }
 
 #waving-hand {
@@ -103,4 +128,23 @@ footer {
 	position: relative;
     top: 20px;
 	left: 3px;
+    animation-name: hand-wave;
+    animation-duration: 1s;
+	animation-delay: 0.5s;
+}
+
+@keyframes hand-wave {
+	0%   {transform: rotate(0deg);}
+	17%   {transform: rotate(20deg);}
+	50%   {transform: rotate(-20deg);}
+	83%   {transform: rotate(20deg);}
+	100%   {transform: rotate(0deg);}
+}
+
+footer img {
+	height: 1.5rem;
+	width: 1.5rem;
+	position: relative;
+	top: 23px;
+	right: 5px;
 }
