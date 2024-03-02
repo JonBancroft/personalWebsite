@@ -161,8 +161,47 @@ footer img {
 	justify-content: flex-start;
 }
 
-#project-list img {
+.project-box {
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+.project-box img {
 	width: 20rem;
 	height: 20rem;
 	padding: 1rem;
+	opacity: 100%;
 }
+
+.project-box:hover img {
+	opacity: 20%;
+	transition: 0.3s;
+}
+
+.project-box h2 {
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+
+.project-box:hover h2 {
+	opacity: 100%;
+	transition: 0.3s;
+}
+
+.project-box p {
+	position: absolute;
+	top: 40%;
+	left:10%;
+	right:10%;
+	opacity:0%;
+	transition: 0.3s;
+}
+
+.project-box:hover p {
+	opacity:100%;
+}
+

@@ -1,7 +1,13 @@
 {% include "header.html" %}
 <main id="project-list">
 	{% for project in projects %}
-		<a href="/projects/{{ project.id }}"><img src="{{ project.image.url }}"></a>
+		<div class="project-box">
+			<a href="/projects/{{ project.id }}">
+				<img src="{{ project.image.url }}">
+				<h2>{{ project.name }}</h2>
+				<p>{{ project.description|truncatechars:180 }}</p>
+			</a>
+		</div>
 	{% endfor %}
 </main>
 {% include "footer.html" %}
