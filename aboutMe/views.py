@@ -14,9 +14,10 @@ def all_projects(request):
                                              'projects': projects})
 
 
-# TODO: update this
 def project(request, project_id):
-    return render(request, "projects.html", {'title': ''})
+    project = models.Project.objects.filter(id=project_id).first()
+    return render(request, "project.html", {'title': project.name,
+                                            'project': project})
 
 
 def resume(request):

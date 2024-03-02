@@ -195,13 +195,20 @@ footer img {
 .project-box p {
 	position: absolute;
 	top: 40%;
-	left:10%;
-	right:10%;
-	opacity:0%;
+	left: 10%;
+	right: 10%;
+	opacity: 0%;
 	transition: 0.3s;
 }
 
 .project-box:hover p {
-	opacity:100%;
+	opacity: 100%;
+}
+
+#back-arrow {
+	height: 1rem;
+	width: auto:
+	display: inline;
+	margin-bottom:0;
 }
 
