@@ -1,7 +1,13 @@
 {% include "header.html" %}
 <main>
 	<h1 id="main-intro">{{ project.name }}</h1>
+	<h3 id="repo-link"><a href="{{ project.repo_link }}">Repository</a></h3>
 	<p>{{ project.description }}</p>
+	<div id="photo-gallery">
+		{% for image in gallery_images %}
+			<img src="{{ image.image.url }}">
+		{% endfor %}
+	</div>
 	<a href="/projects">
 		<p>Back <img src="/static/back-arrow.png" id="back-arrow"></p>
 	</a>

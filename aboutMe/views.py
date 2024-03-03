@@ -16,8 +16,10 @@ def all_projects(request):
 
 def project(request, project_id):
     project = models.Project.objects.filter(id=project_id).first()
+    gallery_images = models.GalleryImage.objects.filter(project=project).all()
     return render(request, "project.html", {'title': project.name,
-                                            'project': project})
+                                            'project': project,
+                                            'gallery_images': gallery_images})
 
 
 def resume(request):

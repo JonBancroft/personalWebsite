@@ -212,3 +212,13 @@ footer img {
 	margin-bottom:0;
 }
 
+#repo-link {
+	margin-bottom: 3rem;
+}
+
+#photo-gallery img{
+	width: auto;
+	height: 20rem;
+	padding: 1rem;
+}
+
