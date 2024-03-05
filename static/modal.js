@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var modalImage = document.getElementById("modal-image");
   var span = document.getElementsByClassName("close")[0];
   var galleryImages = Array.from(document.getElementById("image-bar").children);
+  var imageDescription = document.getElementById("image-description")
 
   var selectedImage = galleryImages[0];
   selectedImage.setAttribute("id", "selected");
+  imageDescription.innerHTML = selectedImage.getAttribute("description");
 
   // When the user clicks on the button, open the modal
   mainImage.onclick = function() {
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var selectedSource = selectedImage.getAttribute("src")
       mainImage.setAttribute("src", selectedSource);
       modalImage.setAttribute("src", selectedSource);
+      imageDescription.innerHTML = selectedImage.getAttribute("description");
     }
   });
 });

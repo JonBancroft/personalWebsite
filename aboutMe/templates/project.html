@@ -2,16 +2,19 @@
 <script src="/static/modal.js"></script>
 <main>
 	<h1 id="main-intro">{{ project.name }}</h1>
-	<h3 id="repo-link"><a href="{{ project.repo_link }}">Repository</a></h3>
+	<a href="{{ project.repo_link }}" id="repo-link">Repository</a>
 	<p>{{ project.description }}</p>
-	
+	<p>{{ project.tools }}</p>
 	<div id="image-display">
-		<img src={{ gallery_images.0.image.url }} id="main-image" class="selectable">
-		<div id="image-bar">
-			{% for image in gallery_images %}
-				<img src="{{ image.image.url }}" class="selectable">
-			{% endfor %}
+		<div id="image-selector" class="info-box">
+			<img src={{ gallery_images.0.image.url }} id="main-image" class="selectable">
+			<div id="image-bar">
+				{% for image in gallery_images %}
+					<img src="{{ image.image.url }}" class="selectable" description="{{ image.description}} ">
+				{% endfor %}
+			</div>
 		</div>
+		<p id="image-description"></p>
 	</div>
 	
 	<div id="myModal" class="modal">
