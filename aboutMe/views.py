@@ -1,15 +1,16 @@
 from django.shortcuts import render
+from django.core.serializers import serialize
 from . import models
 
 # Create your views here.
 def home(request):
-    projects = models.Project.objects.all()[:3]
+    projects = models.Project.objects.all().order_by("-priority")[:3]
     return render(request, "index.html", {'title': 'Jon Bancroft',
                                           'projects': projects})
 
 
 def all_projects(request):
-    projects = models.Project.objects.all()
+    projects = models.Project.objects.all().order_by("-priority")
     return render(request, "projects.html", {'title': 'Projects',
                                              'projects': projects})
 
@@ -17,6 +18,7 @@ def all_projects(request):
 def project(request, project_id):
     project = models.Project.objects.filter(id=project_id).first()
     gallery_images = models.GalleryImage.objects.filter(project=project).all()
+
     return render(request, "project.html", {'title': project.name,
                                             'project': project,
                                             'gallery_images': gallery_images})

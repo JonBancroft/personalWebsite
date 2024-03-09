@@ -5,8 +5,8 @@
 	<a href="{{ project.repo_link }}" id="repo-link">Repository</a>
 	<p>{{ project.description }}</p>
 	<p>Tools Used: {{ project.tools }}</p>
-	<div id="image-display">
-		<div id="image-selector" class="info-box">
+	<div id="image-display" class="info-box">
+		<div id="image-selector">
 			<img src={{ gallery_images.0.image.url }} id="main-image" class="selectable">
 			<div id="image-bar">
 				{% for image in gallery_images %}
@@ -17,7 +17,7 @@
 		<p id="image-description"></p>
 	</div>
 	
-	<div id="myModal" class="modal">
+	<div id="my-modal" class="modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<img src={{ gallery_images.0.image.url }} id="modal-image">

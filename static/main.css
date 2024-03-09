@@ -7,7 +7,6 @@
 }
 
 body, html {
-	min-height: 100%;
 	margin: 0;
 	padding: 0;
 }
@@ -229,14 +228,6 @@ footer img {
   background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
 .close {
   color: #aaa;
   float: right;
@@ -254,18 +245,26 @@ footer img {
 #image-display {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+	justify-content: center;
+	align-items: start;
 	width: 100%;
-	height: 25rem;
 	padding: 1rem;
-	box-sizing: border-box;
-	margin-top: 3rem;
+	margin-top: 4rem;
+	background-color: #627977;
+}
+
+#image-selector {
+	display: flex;
+	flex-direction: column;
+	margin: 0 2rem 0 0;
+	max-width: 50%;
+	max-height: 50%;
 }
 
 #main-image {
-	height: 80%;
-	margin: 2rem auto 0;
+	width: 100%;
+	max-height: 15rem;
+	margin: 0;
 }
 
 .selectable:hover {
@@ -277,16 +276,23 @@ footer img {
 	padding-bottom: 4px;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	width: 100%;
-	height: 3rem;
-	margin-bottom: 2rem;
-	height: 30%
+	margin: 4px 0;
+	height: 30%;
+	overflow-x: auto;
 }
 
 #image-bar img {
 	height: 3rem;
-	margin: 1rem 4px 0;
+	margin: 0 4px;
+}
+
+/* workaround, justify-content: center; doesn't work with overflow scroll bar*/
+#image-bar img:first-child {
+	margin-left: auto;
+}
+
+#image-bar img:last-child {
+	margin-right: auto;
 }
 
 #modal-image {
@@ -295,14 +301,6 @@ footer img {
 
 #image-description {
 	width:30%;
+	max-height: 20rem;
 	overflow-y:auto;
-	margin:1rem 1rem 1rem 2rem;
-	height: 90%;
-}
-
-#image-selector {
-	width: 70%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
 }

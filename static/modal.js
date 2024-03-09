@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById("myModal");
+  var modal = document.getElementById("my-modal");
   var mainImage = document.getElementById("main-image");
   var modalImage = document.getElementById("modal-image");
   var span = document.getElementsByClassName("close")[0];
@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
   selectedImage.setAttribute("id", "selected");
   imageDescription.innerHTML = selectedImage.getAttribute("description");
 
-  // When the user clicks on the button, open the modal
+  // When the user clicks on the main image, open the modal
   mainImage.onclick = function() {
-    modal.style.display = "block";
+    modal.style.display = "flex";
   }
 
   // When the user clicks on <span> (x), close the modal
@@ -44,4 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
       imageDescription.innerHTML = selectedImage.getAttribute("description");
     }
   });
+
+  window.addEventListener('resize', () => {
+    
+  }, true);
 });
