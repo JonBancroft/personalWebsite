@@ -4,7 +4,7 @@
 	<h1 id="main-intro">{{ project.name }}</h1>
 	<a href="{{ project.repo_link }}" id="repo-link">Repository</a>
 	<p>{{ project.description }}</p>
-	<p>{{ project.tools }}</p>
+	<p>Tools Used: {{ project.tools }}</p>
 	<div id="image-display">
 		<div id="image-selector" class="info-box">
 			<img src={{ gallery_images.0.image.url }} id="main-image" class="selectable">
